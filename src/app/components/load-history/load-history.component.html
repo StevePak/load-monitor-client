@@ -1,0 +1,5 @@
+<h1 class="mt-5">CPU Load History</h1>
+<ul class="list-group" *ngIf="cpuLoads.length">
+  <li class="list-group-item" *ngFor="let load of cpuLoads">{{load}}</li>
+</ul>
+<p class="lead" *ngIf="cpuLoads.length === 0">Loading...</p>
