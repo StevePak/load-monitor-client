@@ -33,8 +33,7 @@ export class LoadHistoryComponent implements OnInit {
 
   ngOnInit() {
     this.serverLoadService.getLoadAverage().subscribe(load => {
-      const today = new Date();
-      const time = today.getHours() + ":" + today.getMinutes().toString().padStart(2, '0') + ":" + today.getSeconds().toString().padStart(2, '0');
+      const time = new Date().toTimeString().split(" ")[0];
       let series = this.data[0].series;
       series.push({ name: time, value: load });
       if (series.length > 60) {

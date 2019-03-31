@@ -1,17 +1,16 @@
-<div>
-    <h1 class="mt-5">Current CPU Load</h1>
-    <p class="lead" *ngIf="data.length === 0">Loading...</p>
-    <ngx-charts-gauge 
-        *ngIf="data.length !== 0"
-        [view]="[700, 400]"
-        [results]="data"
-        [scheme]="colorScheme"
-        [min]="0"
-        [max]="2"
-        [angleSpan]="240"
-        [startAngle]="-120"
-        [units]="'usage'"
-        [bigSegments]="10"
-        [smallSegments]="5">
-    </ngx-charts-gauge>
+<div class="col-md-12">
+  <h1 class="mt-5">Current CPU Load</h1>
+  <p class="lead" *ngIf="data.length === 0">Loading...</p>
+  <ngx-charts-gauge *ngIf="data.length !== 0" 
+    [view]="[700, 400]"
+    [results]="data"
+    [scheme]="colorScheme"
+    [min]="0"
+    [max]="2"
+    [angleSpan]="240"
+    [startAngle]="-120"
+    [units]="'usage'"
+    [bigSegments]="10"
+    [smallSegments]="5">
+  </ngx-charts-gauge>
 </div>

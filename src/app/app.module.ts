@@ -3,6 +3,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { SocketIoConfig, SocketIoModule } from 'ngx-socket-io';
+import { ToastrModule } from 'ngx-toastr';
 
 import { AppComponent } from './app.component';
 import { LoadGaugeComponent } from './components/load-gauge/load-gauge.component';
@@ -22,7 +23,8 @@ const config: SocketIoConfig = { url: 'http://localhost:4001', options: {} };
     BrowserModule,
     BrowserAnimationsModule,
     NgxChartsModule,
-    SocketIoModule.forRoot(config)
+    SocketIoModule.forRoot(config),
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
