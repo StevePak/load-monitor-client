@@ -1,7 +1,17 @@
 <div>
   <h1 class="mt-5">CPU Load History</h1>
-  <ul class="list-group" *ngIf="cpuLoads.length">
-    <li class="list-group-item" *ngFor="let load of cpuLoads">{{load}}</li>
-  </ul>
-  <p class="lead" *ngIf="cpuLoads.length === 0">Loading...</p>
+  <p class="lead" *ngIf="data[0].series.length < 2">Loading...</p>
+  <ngx-charts-line-chart *ngIf="data[0].series.length >= 2"
+      [view]="[900, 500]"
+      [scheme]="colorScheme"
+      [results]="data"
+      [yAxis]="true"
+      [xAxis]="xAxis"
+      [showXAxisLabel]="true"
+      [showYAxisLabel]="true"
+      [xAxisLabel]="'Time'"
+      [yAxisLabel]="'Load'"
+      [autoScale]='true'
+      (select)="onSelect($event)">
+    </ngx-charts-line-chart>
 </div>
