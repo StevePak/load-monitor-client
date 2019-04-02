@@ -8,12 +8,12 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class AlertService {
 
-  messages:Message[] = [];
-  messagesObservable:BehaviorSubject<Message[]> = new BehaviorSubject<Message[]>(this.messages);
+  messages: Message[] = [];
+  messagesObservable: BehaviorSubject<Message[]> = new BehaviorSubject<Message[]>(this.messages);
 
   constructor(private toastr: ToastrService) { }
 
-  showSuccess(title: string, message: string):void {
+  showSuccess(title: string, message: string): void {
     this.toastr.clear();
     this.toastr.success(message, title);
     this.messages.push({
@@ -24,9 +24,9 @@ export class AlertService {
     this.messagesObservable.next(this.messages);
   }
 
-  showError(title: string, message: string):void {
+  showError(title: string, message: string): void {
     this.toastr.clear();
-    this.toastr.error(message, title, { disableTimeOut: true, tapToDismiss: false});
+    this.toastr.error(message, title, { disableTimeOut: true, tapToDismiss: false });
     this.messages.push({
       title,
       message,
@@ -35,7 +35,7 @@ export class AlertService {
     this.messagesObservable.next(this.messages);
   }
 
-  getMessages():Observable<Message[]> {
+  getMessages(): Observable<Message[]> {
     return this.messagesObservable;
   }
 }
