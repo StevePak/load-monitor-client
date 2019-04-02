@@ -25,7 +25,6 @@
     "ngx-socket-io": "^2.1.1",
     "ngx-toastr": "^10.0.2",
     "rxjs": "~6.3.3",
-    "socket.io-client": "^2.2.0",
     "tslib": "^1.9.0",
     "zone.js": "~0.8.26"
   },
@@ -45,7 +44,6 @@
     "karma-coverage-istanbul-reporter": "~2.0.1",
     "karma-jasmine": "~1.1.2",
     "karma-jasmine-html-reporter": "^0.2.2",
-    "mock-socket": "^8.0.5",
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",
