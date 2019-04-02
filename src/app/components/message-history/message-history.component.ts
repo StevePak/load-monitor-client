@@ -8,15 +8,13 @@ import { Message } from 'src/app/model/message';
   styleUrls: ['./message-history.component.css']
 })
 export class MessageHistoryComponent implements OnInit {
-
   messages: Message[] = [];
 
-  constructor(private alertService: AlertService) { }
+  constructor(private alertService: AlertService) {}
 
   ngOnInit() {
-    this.alertService.getMessages().subscribe(messages =>{
+    this.alertService.getMessages().subscribe(messages => {
       this.messages = messages;
     });
   }
-
 }

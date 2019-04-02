@@ -24,10 +24,14 @@ export class ServerLoadService {
     if (load > 1 && (!this.overload || this.overload < new Date())) {
       const time = new Date().toTimeString().split(' ')[0];
       this.overload = new Date(new Date().getTime() + 120000);
-      this.alertService.showError('ALERT', `High load generated an alert - load = ${load.toFixed(4)}, triggered at time ${time}.`)
+      this.alertService.showError(
+        'ALERT',
+        `High load generated an alert - load = ${load.toFixed(4)}
+        , triggered at time ${time}.`
+      );
     } else if (load <= 1 && this.overload > new Date()) {
       this.overload = new Date();
-      this.alertService.showSuccess('RECOVERED', 'CPU load has stabilized.')
+      this.alertService.showSuccess('RECOVERED', 'CPU load has stabilized.');
     }
   }
 }

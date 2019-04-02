@@ -8,7 +8,6 @@ import { D3MultiData } from 'src/app/model/d3-multi-data';
   styleUrls: ['./load-history.component.css']
 })
 export class LoadHistoryComponent implements OnInit {
-
   data: D3MultiData[] = [
     {
       name: 'CPU Load',
@@ -23,18 +22,17 @@ export class LoadHistoryComponent implements OnInit {
   xAxis() {
     if (this.data[0].series.length > 30) {
       return false;
-    }
-    else {
+    } else {
       return true;
     }
   }
 
-  constructor(private serverLoadService: ServerLoadService) { }
+  constructor(private serverLoadService: ServerLoadService) {}
 
   ngOnInit() {
     this.serverLoadService.getLoadAverage().subscribe(load => {
-      const time = new Date().toTimeString().split(" ")[0];
-      let series = this.data[0].series;
+      const time = new Date().toTimeString().split(' ')[0];
+      const series = this.data[0].series;
       series.push({ name: time, value: load });
       if (series.length > 60) {
         series.shift();
@@ -43,5 +41,4 @@ export class LoadHistoryComponent implements OnInit {
       this.data = [...this.data];
     });
   }
-
 }

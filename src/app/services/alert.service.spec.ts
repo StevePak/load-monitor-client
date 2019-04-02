@@ -1,13 +1,21 @@
 import { AlertService } from './alert.service';
 
 describe('AlertService', () => {
-  let toastrService: { clear: jasmine.Spy, success: jasmine.Spy, error: jasmine.Spy };
+  let toastrService: {
+    clear: jasmine.Spy;
+    success: jasmine.Spy;
+    error: jasmine.Spy;
+  };
   let alertService: AlertService;
 
   beforeEach(() => {
-    toastrService = jasmine.createSpyObj('ToastrService', ['clear', 'success', 'error']);
+    toastrService = jasmine.createSpyObj('ToastrService', [
+      'clear',
+      'success',
+      'error'
+    ]);
     // tslint:disable-next-line: no-angle-bracket-type-assertion
-    alertService = new AlertService(<any>toastrService);
+    alertService = new AlertService(<any> toastrService);
   });
 
   it('should create service with empty messages', () => {

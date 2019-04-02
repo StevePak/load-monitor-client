@@ -9,19 +9,18 @@ import { D3Data } from 'src/app/model/d3-data';
   styleUrls: ['./load-gauge.component.css']
 })
 export class LoadGaugeComponent implements OnInit {
-  data:D3Data[] = [];
+  data: D3Data[] = [];
 
   colorScheme = {
     domain: ['green']
   };
 
-  constructor(private serverLoadService: ServerLoadService) { }
+  constructor(private serverLoadService: ServerLoadService) {}
 
   ngOnInit() {
     this.serverLoadService.getLoadAverage().subscribe(load => {
       this.data = [{ name: 'CPU Load', value: load }];
-      this.colorScheme = load > 1 ? { domain: ['red'] }: { domain: ['green'] };
+      this.colorScheme = load > 1 ? { domain: ['red'] } : { domain: ['green'] };
     });
   }
-
 }

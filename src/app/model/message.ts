@@ -1,5 +1,5 @@
 export class Message {
-    title: string;
-    message: string;
-    timestamp: Date;
+  title: string;
+  message: string;
+  timestamp: Date;
 }
