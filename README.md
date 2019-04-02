@@ -1,27 +1,47 @@
-# LoadMonitorClient
+# Load Monitor Client
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.7.
+Load Monitor Client is an Angular app that displays server load metrics, such as the current CPU load and the load history of the last 10 minutes. Makes use of Socket.IO to apply real-time updates.
 
-## Development server
+### Prerequisites
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+What things you need to install the software and how to install them:
 
-## Code scaffolding
+- [Node.js/NPM](https://nodejs.org/en/)
+- [Angular CLI](https://angular.io/guide/quickstart)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Installing
 
-## Build
+A step by step on how to get a development env running.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+First, ensure you have the **load-monitor-server** application running.
 
-## Running unit tests
+Install npm packages
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```
+npm install
+```
 
-## Running end-to-end tests
+Start application
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+```
+npm start
+```
 
-## Further help
+This will open up the browser and navigate you to the load monitoring dashboard.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Running the tests
+
+Run tests using:
+
+```
+npm test
+```
+
+## Built With
+
+- [Angular](https://angular.io/) - The web framework used
+- [NPM](https://www.npmjs.com/) - Package Management
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
